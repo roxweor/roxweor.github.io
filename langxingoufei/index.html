@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>狼心狗肺-成语释义·人性探讨与警示录</title>
+  <meta name="description" content="狼心狗肺成语深度解读：溯源、典故、现实映射与人性警示。透过古老成语，审视信任、背叛与良知。包含近反义词、经典例句及常见问题。">
+  <meta name="keywords" content="狼心狗肺,成语故事,忘恩负义,人性,警示,近义词,反义词,出处,典故,传统文化">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f5efe6;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Serif SC", serif;
+      color: #2e2a26;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 页眉 */
+    .site-header {
+      background: #2f2a22;
+      color: #f4ecdd;
+      padding: 15px 0;
+      border-bottom: 4px solid #b6452c;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      font-size: 2rem;
+      filter: drop-shadow(2px 2px 0 #00000055);
+    }
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-shadow: 2px 2px 0 #1f1a14;
+    }
+    .logo-sub {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      letter-spacing: 2px;
+    }
+    .header-quote {
+      font-style: italic;
+      font-size: 1rem;
+      background: #4a3f32;
+      padding: 5px 18px;
+      border-radius: 30px;
+      color: #eadbc4;
+    }
+
+    /* 导航 */
+    .nav-bar {
+      background: #4a3b2c;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+    }
+    .nav-links li a {
+      display: inline-block;
+      padding: 14px 28px;
+      color: #f2e9da;
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 1px;
+      transition: background 0.3s, color 0.3s;
+      border-bottom: 3px solid transparent;
+    }
+    .nav-links li a:hover {
+      background: #b6452c;
+      color: #fff;
+      border-bottom-color: #f0c49b;
+    }
+    .nav-links li a.active {
+      background: #2f2a22;
+      color: #f4c9a0;
+      border-bottom-color: #b6452c;
+    }
+
+    /* 主体区块 */
+    main {
+      background: #ffffffd9;
+      backdrop-filter: blur(3px);
+      margin: 25px auto;
+      border-radius: 24px;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.35);
+      padding: 30px 25px;
+      border-left: 8px solid #b6452c;
+      border-right: 8px solid #b6452c;
+    }
+
+    /* 首屏 —— 今日词解 */
+    .hero-def {
+      background: linear-gradient(145deg, #2b241d 0%, #4e4237 100%);
+      color: #fdf3e2;
+      padding: 32px 30px;
+      border-radius: 40px 12px 40px 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-def::after {
+      content: "狼·狈";
+      font-size: 6rem;
+      font-weight: 800;
+      color: #ffffff0d;
+      position: absolute;
+      right: 20px;
+      bottom: -20px;
+      letter-spacing: 10px;
+    }
+    .hero-def h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 8px;
+      margin-bottom: 10px;
+      text-shadow: 4px 4px 0 #1a130d;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-def .sub-line {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+      border-left: 5px solid #b6452c;
+      padding-left: 15px;
+    }
+    .def-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+      z-index: 3;
+    }
+    .def-item {
+      background: #00000030;
+      padding: 12px 20px;
+      border-radius: 50px;
+      backdrop-filter: blur(5px);
+      border: 1px solid #dcb58b55;
+      font-weight: 500;
+    }
+    .def-item strong {
+      color: #f5bd8a;
+      margin-right: 6px;
+    }
+
+    /* 栏目卡片 */
+    .section-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      position: relative;
+      padding-left: 20px;
+      border-left: 8px solid #b6452c;
+      color: #2b241d;
+    }
+    .section-title::after {
+      content: "";
+      display: inline-block;
+      width: 100px;
+      height: 3px;
+      background: #b6452c55;
+      vertical-align: middle;
+      margin-left: 15px;
+    }
+
+    /* 典故溯源 */
+    .origin-box {
+      background: #f3ead9;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid #d8c5a8;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .origin-text p {
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+    .origin-highlight {
+      background: #b6452c1a;
+      border-left: 6px solid #b6452c;
+      padding: 12px 18px;
+      font-style: italic;
+      border-radius: 0 10px 10px 0;
+    }
+
+    /* 近反义词 / 双栏 */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .word-card {
+      background: #fbf4ec;
+      border-radius: 20px;
+      padding: 20px 25px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+      border-top: 5px solid #b6452c;
+    }
+    .word-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      color: #3d2f21;
+      margin-bottom: 15px;
+    }
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .tag {
+      background: #fff;
+      padding: 6px 18px;
+      border-radius: 40px;
+      border: 1px solid #a9855c;
+      color: #3d2f21;
+      font-weight: 500;
+      box-shadow: 0 2px 0 #b6452c55;
+    }
+    .tag.opposite {
+      background: #efe0cf;
+      border-color: #6b4f32;
+    }
+
+    /* 现实警示文章 */
+    .warning-article {
+      columns: 2 300px;
+      column-gap: 40px;
+      margin: 25px 0;
+      background: #f6f0e6;
+      padding: 25px;
+      border-radius: 20px;
+    }
+    .warning-article p {
+      margin-bottom: 18px;
+      font-size: 1.02rem;
+      break-inside: avoid;
+    }
+    .warning-article p strong {
+      color: #a63c1f;
+    }
+
+    /* 例句列表 */
+    .example-list {
+      background: #e9dccb;
+      border-radius: 30px 10px 30px 10px;
+      padding: 25px 30px;
+      margin: 30px 0;
+    }
+    .example-list li {
+      margin-bottom: 15px;
+      list-style: none;
+      background: #fffaf2;
+      padding: 10px 18px;
+      border-radius: 50px;
+      border-left: 8px solid #b6452c;
+      font-style: italic;
+    }
+
+    /* 常见问题 */
+    .faq-box {
+      margin: 30px 0;
+    }
+    details {
+      background: #faf4ec;
+      border-radius: 16px;
+      padding: 10px 20px;
+      margin-bottom: 12px;
+      border: 1px solid #c5af91;
+      transition: 0.2s;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #4a2e18;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    summary::before {
+      content: "◈";
+      color: #b6452c;
+      font-size: 1.6rem;
+    }
+    details p {
+      margin: 15px 0 5px 35px;
+      color: #3e3227;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: #2f2a22;
+      color: #cbb89d;
+      padding: 25px 0;
+      margin-top: 30px;
+      text-align: center;
+      border-radius: 30px 30px 0 0;
+    }
+    .footer-quote {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .footer-copy {
+      opacity: 0.7;
+    }
+
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .hero-def h1 { font-size: 2.3rem; }
+      .origin-box, .two-col { grid-template-columns: 1fr; }
+      .nav-links li a { padding: 12px 15px; }
+      .header-inner { flex-direction: column; gap: 10px; }
+    }
+    @media (max-width: 600px) {
+      .hero-def { padding: 20px; }
+      .hero-def h1 { font-size: 1.8rem; letter-spacing: 3px; }
+      .logo-text { font-size: 1.3rem; }
+      .section-title { font-size: 1.6rem; }
+      .def-grid { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo-area">
+        <span class="logo-icon">🐺</span>
+        <span>
+          <span class="logo-text">狼心狗肺</span><br>
+          <span class="logo-sub">· 人性警示录 ·</span>
+        </span>
+      </div>
+      <div class="header-quote">知恩不报，禽兽不如</div>
+    </div>
+  </header>
+
+  <nav class="nav-bar">
+    <div class="container">
+      <ul class="nav-links">
+        <li><a href="#" class="active">词解</a></li>
+        <li><a href="#">典故</a></li>
+        <li><a href="#">近反义</a></li>
+        <li><a href="#">现实警示</a></li>
+        <li><a href="#">例句</a></li>
+        <li><a href="#">常见问题</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- 首屏 H1 区域 -->
+    <section class="hero-def">
+      <h1>狼心狗肺</h1>
+      <div class="sub-line">比喻心肠狠毒，毫无感恩，像狼和狗一样凶残贪婪。</div>
+      <div class="def-grid">
+        <div class="def-item"><strong>拼音</strong> láng xīn gǒu fèi</div>
+        <div class="def-item"><strong>感情色彩</strong> 贬义 · 强烈谴责</div>
+        <div class="def-item"><strong>常用程度</strong> 常用成语</div>
+        <div class="def-item"><strong>用法</strong> 谓语、宾语、定语</div>
+      </div>
+    </section>
+
+    <!-- 典故溯源 -->
+    <section>
+      <h2 class="section-title">📜 典故溯源</h2>
+      <div class="origin-box">
+        <div class="origin-text">
+          <p>关于“狼心狗肺”的出处，流传较广的是明代冯梦龙《醒世恒言》中的故事：传说古代有一人名为“狼心”，另有一人“狗肺”，二人行恶多端，最终遭到天谴。后世用“狼心狗肺”形容忘恩负义、凶残恶毒之人。</p>
+          <p>另一说法与战国时期名医扁鹊有关，相传扁鹊曾为一壮士换心换肺，以狼心狗肺代替，虽救活性命，却使其性情大变，贪婪暴虐。故事虽属寓言，却深刻折射出古人对“心肠好坏”与“道德品性”的关联想象。</p>
+          <div class="origin-highlight">
+            ⚠️ 无论哪种传说，核心都在警示：人性若失去良知，与禽兽无异。
+          </div>
+        </div>
+        <div style="background: #e1d1bb; border-radius: 20px; padding: 20px; display: flex; flex-direction: column; justify-content: center;">
+          <span style="font-size: 4rem; text-align: center;">🐺❤️🩸</span>
+          <p style="text-align: center; font-weight: 600;">“受恩不报，反噬其主”<br>是这一成语最刺骨的教训。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 近反义词 + 辨析 -->
+    <section>
+      <h2 class="section-title">🔍 语义对照</h2>
+      <div class="two-col">
+        <div class="word-card">
+          <h3><span>😡</span> 近义词</h3>
+          <div class="tag-group">
+            <span class="tag">忘恩负义</span>
+            <span class="tag">恩将仇报</span>
+            <span class="tag">以怨报德</span>
+            <span class="tag">背信弃义</span>
+            <span class="tag">心狠手辣</span>
+            <span class="tag">蛇蝎心肠</span>
+          </div>
+          <p style="margin-top: 15px;">强调“受人恩惠却不感激，反而加害”的恶劣行径。</p>
+        </div>
+        <div class="word-card">
+          <h3><span>😇</span> 反义词</h3>
+          <div class="tag-group">
+            <span class="tag opposite">知恩图报</span>
+            <span class="tag opposite">感恩戴德</span>
+            <span class="tag opposite">饮水思源</span>
+            <span class="tag opposite">结草衔环</span>
+            <span class="tag opposite">仁至义尽</span>
+          </div>
+          <p style="margin-top: 15px;">代表中国传统伦理中最受推崇的“义”与“仁”。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 现实警示文章 -->
+    <section>
+      <h2 class="section-title">🧠 现实启示 · 人性之镜</h2>
+      <div class="warning-article">
+        <p><strong>历史与文学中的狼心狗肺：</strong> 从《农夫与蛇》到《杜十娘怒沉百宝箱》，背叛与忘恩总是令人心寒。成语“狼心狗肺”正是古人将最恶毒的品性投射到狼与狗身上——这两种动物本是人类驯化或敬畏的对象，一旦与“心”“肺”结合，便成为无良之人的代名词。</p>
+        <p><strong>现代社会的“隐性狼心狗肺”：</strong> 并不一定是杀人放火，有时是朋友落难时袖手旁观，是接受帮助后翻脸不认人，是职场中的过河拆桥。这种背叛往往比明枪暗箭更伤人，因为它践踏了信任。</p>
+        <p><strong>如何避免成为“狼心狗肺”之人？</strong> ①常怀感恩之心，铭记雪中送炭的情分；②不做损人利己的抉择，守住道德底线；③警惕极端利己主义，在利益面前保持良知。</p>
+        <p><strong>如何与这类人相处？</strong> 识别“狼心狗肺”者的特征：索取无度、从无愧疚、利用他人善意。若无法远离，务必保护自己，不再给予二次伤害的机会。</p>
+      </div>
+    </section>
+
+    <!-- 经典例句 -->
+    <section>
+      <h2 class="section-title">📖 文学·生活用例</h2>
+      <ul class="example-list">
+        <li>“你这狼心狗肺的东西，当年若不是我救你，你早已饿死街头！”</li>
+        <li>他发达后不仅不认旧友，反而侵吞恩人财产，真是狼心狗肺。</li>
+        <li>《红楼梦》中贾雨村对甄士隐之恩不报反害，可谓狼心狗肺之徒。</li>
+        <li>现实中，对父母不孝、对恩人反咬一口，便是狼心狗肺的具体表现。</li>
+      </ul>
+    </section>
+
+    <!-- 常见问题FAQ -->
+    <section class="faq-box">
+      <h2 class="section-title">❓ 常见问题</h2>
+      <details>
+        <summary>“狼心狗肺”和“狼心狗行”有什么区别？</summary>
+        <p>“狼心狗行”形容心肠贪婪狠毒，行为卑劣；而“狼心狗肺”更侧重忘恩负义、毫无人性。两者语义相近，但“狼心狗肺”更常用，情感色彩更重。</p>
+      </details>
+      <details>
+        <summary>这个成语带有歧视动物的意味吗？</summary>
+        <p>成语借用了狼的凶残和狗的某些负面印象，但主要用以批判人性，并非真实评价动物。现代使用时应就事论事，避免对动物产生刻板偏见。</p>
+      </details>
+      <details>
+        <summary>在写作中如何恰当使用“狼心狗肺”？</summary>
+        <p>适用于斥责严重背叛、恩将仇报的行为，属于强烈贬义。正式文书或公文中建议使用“忘恩负义”等相对温和的词语，文学创作中则可尽情使用以突出冲突。</p>
+      </details>
+      <details>
+        <summary>是否存在历史原型人物？</summary>
+        <p>没有确凿正史记载，多为民间传说和文学虚构。其价值在于道德警示，而非指代具体某人。</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-quote">人之初，性本善 · 莫负恩，莫欺心</div>
+      <div class="footer-copy">© 狼心狗肺 · 传统文化警示录 | 成语·人性·反思</div>
+    </div>
+  </footer>
+
+  <!-- 指定广告脚本 (固定) -->
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
