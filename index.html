@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘿嘿taxi-快捷出行打车服务与使用指南</title>
+    <meta name="description" content="嘿嘿taxi是一家专注于城市快捷出行的网约车服务平台，提供即时叫车、预约出行、机场接送等多种服务，本页面为您详细介绍平台特点、使用方法和常见问题。">
+    <meta name="keywords" content="嘿嘿taxi,网约车,打车软件,出租车,出行服务,叫车平台">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f7f9fc;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: #1a7f64;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        .site-header {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #1a7f64, #2bb673);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a7f64;
+            letter-spacing: 1px;
+        }
+        .main-nav {
+            display: flex;
+            gap: 28px;
+        }
+        .main-nav a {
+            font-weight: 500;
+            color: #34495e;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover {
+            color: #1a7f64;
+            border-bottom-color: #1a7f64;
+        }
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+        .btn {
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            background: transparent;
+            transition: 0.2s;
+        }
+        .btn-primary {
+            background: #1a7f64;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #13654e;
+        }
+        .btn-outline {
+            border: 1px solid #1a7f64;
+            color: #1a7f64;
+        }
+        .btn-outline:hover {
+            background: #eafaf3;
+        }
+
+        /* 移动端导航 */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #1a7f64;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(145deg, #ffffff 0%, #e6f7f0 100%);
+            padding: 70px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1 1 500px;
+        }
+        .hero-text h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.25;
+            color: #1a3b2f;
+            margin-bottom: 18px;
+        }
+        .hero-text p {
+            font-size: 17px;
+            color: #3e5a4e;
+            max-width: 560px;
+            margin-bottom: 30px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-lg {
+            padding: 14px 32px;
+            font-size: 16px;
+        }
+        .hero-visual {
+            flex: 1 1 360px;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(26, 127, 100, 0.12);
+            padding: 30px 28px;
+            border: 1px solid #ecf7f2;
+        }
+        .mock-map {
+            background: #f0faf5;
+            border-radius: 16px;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a7f64;
+            font-size: 15px;
+            font-weight: 500;
+            border: 1px dashed #9ed6c2;
+            margin-bottom: 20px;
+        }
+        .mock-ride-info {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f2f5;
+            font-size: 14px;
+        }
+        .mock-ride-info span:first-child {
+            color: #7f8c8d;
+        }
+        .mock-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a7f64;
+            margin-top: 12px;
+        }
+
+        /* 服务特色 */
+        .features {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1a3b2f;
+            margin-bottom: 8px;
+        }
+        .section-title p {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            padding: 30px 24px;
+            border-radius: 16px;
+            background: #fafdfb;
+            border: 1px solid #e4f2ec;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            box-shadow: 0 10px 30px rgba(26, 127, 100, 0.08);
+            transform: translateY(-4px);
+        }
+        .feature-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+        .feature-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1a3b2f;
+        }
+        .feature-card p {
+            font-size: 14px;
+            color: #5d6d7e;
+        }
+
+        /* 叫车流程 */
+        .howto {
+            background: #f7f9fc;
+            padding: 70px 0;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            counter-reset: step;
+        }
+        .step-item {
+            text-align: center;
+            position: relative;
+            padding: 20px 10px;
+        }
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            background: #1a7f64;
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .step-item h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .step-item p {
+            font-size: 14px;
+            color: #5d6d7e;
+        }
+
+        /* 场景 */
+        .scenarios {
+            padding: 70px 0;
+            background: #fff;
+        }
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .scenario-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #eef2f5;
+            transition: 0.3s;
+        }
+        .scenario-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+        }
+        .scenario-thumb {
+            height: 130px;
+            background: linear-gradient(135deg, #d5f0e4, #b2e0cf);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        .scenario-body {
+            padding: 20px;
+        }
+        .scenario-body h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        .scenario-body p {
+            font-size: 14px;
+            color: #5d6d7e;
+            margin-bottom: 12px;
+        }
+        .tag {
+            display: inline-block;
+            background: #eafaf3;
+            color: #1a7f64;
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* 安全与提示 */
+        .safety {
+            background: #eef8f3;
+            padding: 60px 0;
+        }
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .safety-card {
+            background: #fff;
+            padding: 24px;
+            border-radius: 14px;
+            border-left: 4px solid #1a7f64;
+        }
+        .safety-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #1a3b2f;
+        }
+        .safety-card p {
+            font-size: 14px;
+            color: #4a5a6a;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 70px 0;
+            background: #fff;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid #edf2f5;
+            padding: 20px 0;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1a3b2f;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 22px;
+            color: #1a7f64;
+            transition: 0.2s;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            margin-top: 12px;
+            color: #5d6d7e;
+            font-size: 15px;
+            padding-left: 10px;
+        }
+
+        /* 下载区 */
+        .download-cta {
+            background: linear-gradient(120deg, #1a7f64, #2bb673);
+            padding: 60px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .download-cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+        .download-cta p {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .btn-light {
+            background: #fff;
+            color: #1a7f64;
+            font-weight: 600;
+            padding: 14px 36px;
+            font-size: 16px;
+        }
+        .btn-light:hover {
+            background: #f0faf5;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1e2b27;
+            color: #a8c3b8;
+            padding: 40px 0 20px;
+            font-size: 14px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-brand p {
+            margin-top: 12px;
+            max-width: 260px;
+        }
+        .footer-col h4 {
+            color: #e8f5ef;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            color: #a8c3b8;
+            transition: 0.2s;
+        }
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid #344e45;
+            padding-top: 20px;
+            text-align: center;
+            color: #749287;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+            }
+            .main-nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 0;
+                background: #fff;
+                padding: 10px 0;
+                border-top: 1px solid #eef2f5;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .main-nav a {
+                padding: 12px 20px;
+                border-bottom: 1px solid #f4f6f8;
+            }
+            .header-actions {
+                margin-left: auto;
+            }
+            .menu-toggle {
+                display: block;
+                order: 3;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .hero-text h1 {
+                font-size: 30px;
+            }
+            .section-title h2 {
+                font-size: 26px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .hero-visual {
+                margin-top: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header-actions .btn:first-child {
+                display: none;
+            }
+            .btn-lg {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <div class="brand">
+            <div class="brand-icon">嘿</div>
+            <span class="brand-name">嘿嘿taxi</span>
+        </div>
+        <nav class="main-nav" id="mainNav">
+            <a href="#features">服务特色</a>
+            <a href="#howto">叫车流程</a>
+            <a href="#scenarios">出行场景</a>
+            <a href="#safety">安全保障</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline" onclick="alert('请使用手机应用商店搜索嘿嘿taxi下载客户端')">下载APP</button>
+            <button class="btn btn-primary" onclick="alert('正在为您跳转叫车页面，请稍候')">立即叫车</button>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+</header>
+
+<main>
+    <!-- Hero 首屏 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>嘿嘿taxi，让每次出行<br>都安心又省心</h1>
+                <p>嘿嘿taxi是面向城市出行场景的网约车服务平台，聚合优质运力，提供即时叫车、预约出行、机场接送等多样化服务。无论通勤、赶车还是夜间回家，一键叫车，快速响应。</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" onclick="alert('正在获取您的定位并匹配附近车辆...')">一键叫车</button>
+                    <button class="btn btn-outline btn-lg" onclick="alert('预约功能即将开放，敬请期待')">预约出行</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="mock-map">🚕 实时地图 · 附近车辆正在为您匹配</div>
+                <div class="mock-ride-info">
+                    <span>当前定位</span>
+                    <span>城市中心 · 商业区</span>
+                </div>
+                <div class="mock-ride-info">
+                    <span>预计等待</span>
+                    <span>约3分钟</span>
+                </div>
+                <div class="mock-ride-info">
+                    <span>预估车费</span>
+                    <span>¥15 - ¥28</span>
+                </div>
+                <div class="mock-price">优惠券已准备</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务特色 -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>为什么选择嘿嘿taxi</h2>
+                <p>用心服务每一次出发与到达</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>快速响应</h3>
+                    <p>智能派单系统实时匹配附近车辆，减少等待时间，让出行更高效。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>行程安全</h3>
+                    <p>全程行程记录，一键分享给亲友，紧急联系人守护每一段路。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>价格透明</h3>
+                    <p>明码标价，预估费用清晰展示，无隐形消费，每一笔都清楚。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚖</div>
+                    <h3>车型丰富</h3>
+                    <p>经济型、舒适型、商务型多种车辆可选，满足个人及团体出行需求。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 叫车流程 -->
+    <section class="howto" id="howto">
+        <div class="container">
+            <div class="section-title">
+                <h2>三步完成叫车</h2>
+                <p>简单操作，即刻出发</p>
+            </div>
+            <div class="steps">
+                <div class="step-item">
+                    <h3>输入目的地</h3>
+                    <p>打开嘿嘿taxi，手动输入或语音输入您要前往的地点。</p>
+                </div>
+                <div class="step-item">
+                    <h3>确认叫车</h3>
+                    <p>选择车型和服务类型，查看预估费用，点击“呼叫车辆”。</p>
+                </div>
+                <div class="step-item">
+                    <h3>安心上车</h3>
+                    <p>司机接单后，在指定上车点等待，核对车牌后开启行程。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 出行场景 -->
+    <section class="scenarios" id="scenarios">
+        <div class="container">
+            <div class="section-title">
+                <h2>覆盖多元出行场景</h2>
+                <p>从日常通勤到长途出行，嘿嘿taxi都在</p>
+            </div>
+            <div class="scenario-grid">
+                <div class="scenario-card">
+                    <div class="scenario-thumb">🏙️</div>
+                    <div class="scenario-body">
+                        <h3>日常通勤</h3>
+                        <p>早晚高峰快速叫车，上班不迟到，下班早回家。</p>
+                        <span class="tag">高峰优先</span>
+                    </div>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-thumb">✈️</div>
+                    <div class="scenario-body">
+                        <h3>机场接送</h3>
+                        <p>提前预约送机或接机，航班动态实时关注，从容出行。</p>
+                        <span class="tag">准时保障</span>
+                    </div>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-thumb">🌙</div>
+                    <div class="scenario-body">
+                        <h3>夜间出行</h3>
+                        <p>深夜加班或聚会结束，安全车辆护送您平安到家。</p>
+                        <span class="tag">夜间守护</span>
+                    </div>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-thumb">👥</div>
+                    <div class="scenario-body">
+                        <h3>多人同行</h3>
+                        <p>商务接待、团体出行可选六座商务车，空间宽敞更舒适。</p>
+                        <span class="tag">团体出行</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安全提示 -->
+    <section class="safety" id="safety">
+        <div class="container">
+            <div class="section-title">
+                <h2>出行安全提示</h2>
+                <p>您的安全是我们最重视的事</p>
+            </div>
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <h3>核对车辆信息</h3>
+                    <p>上车前请核对车牌号、车型与司机信息是否与App显示一致，如有不符请拒绝乘坐并及时举报。</p>
+                </div>
+                <div class="safety-card">
+                    <h3>分享行程给亲友</h3>
+                    <p>建议将实时行程分享给家人或朋友，夜间出行或长途行驶时尤其重要。</p>
+                </div>
+                <div class="safety-card">
+                    <h3>紧急求助功能</h3>
+                    <p>App内设有紧急求助按钮，遇到异常情况可一键联系平台安全团队或报警。</p>
+                </div>
+                <div class="safety-card">
+                    <h3>全程录音保护</h3>
+                    <p>部分行程支持全程录音保护功能，为司乘双方提供更安心的出行环境。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>常见问题</h2>
+                <p>这里可能有您想了解的答案</p>
+            </div>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>嘿嘿taxi在哪些城市可以使用？</summary>
+                    <p>嘿嘿taxi已陆续在全国多个主要城市开通服务，具体运营城市及覆盖区域请在App内查看或咨询在线客服。新城市也在不断拓展中，敬请关注官方公告。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>如何获取乘车优惠券？</summary>
+                    <p>新用户注册后可领取新人礼包，内含多张优惠券。日常也可关注平台不定期推出的活动，如节假日折扣、邀请好友奖励等，优惠信息会通过App消息或短信通知。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>预约用车需要提前多久？</summary>
+                    <p>一般来说，预约用车建议提前2小时以上提交订单，以便平台为您匹配合适车辆。机场接送等对时间要求较高的场景，建议提前更长时间预约。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>行程费用如何计算？</summary>
+                    <p>费用根据行程里程、时长以及所选车型综合计算，计价规则清晰展示在费用说明中。叫车前会显示预估费用范围，最终以实际行程为准。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>对司机服务不满意怎么办？</summary>
+                    <p>行程结束后可通过App对司机进行评价和投诉，平台会认真核实每一条反馈。若涉及安全问题，请优先使用紧急求助功能或报警。</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载号召 -->
+    <section class="download-cta">
+        <div class="container">
+            <h2>准备好体验嘿嘿taxi了吗？</h2>
+            <p>下载App，开启便捷出行新方式</p>
+            <button class="btn btn-light" onclick="alert('请在手机应用商店搜索“嘿嘿taxi”进行下载')">立即下载</button>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h4 style="color:#fff;">嘿嘿taxi</h4>
+                <p>致力于为城市居民提供安全、便捷、舒适的出行服务。让每一次出发都充满期待，每一次到达都安心踏实。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品服务</h4>
+                <ul>
+                    <li><a href="#">即时叫车</a></li>
+                    <li><a href="#">预约出行</a></li>
+                    <li><a href="#">机场接送</a></li>
+                    <li><a href="#">企业用车</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">新手指南</a></li>
+                    <li><a href="#">安全中心</a></li>
+                    <li><a href="#">费用说明</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">公司介绍</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">司机招募</a></li>
+                    <li><a href="#">新闻动态</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 嘿嘿taxi 出行服务平台 | 本页面仅为产品展示与信息说明</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        var nav = document.getElementById('mainNav');
+        nav.classList.toggle('active');
+    }
+</script>
+
+</body>
+                  </html>
